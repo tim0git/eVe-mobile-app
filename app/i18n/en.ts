@@ -7,10 +7,17 @@ const en = {
     logOut: "Log Out",
   },
   welcomeScreen: {
-    welcomeMessage: "Welcome to eVe",
+    heading: "Welcome",
     eVeSlogan: "Electric Vehicle Experience",
     postscript: "We have a few more things to show you before you get started. Let's take a look!",
     letsGo: "Let's go!",
+  },
+  onboardingScreen: {
+    heading: "Onboarding",
+  },
+  signUp: {
+    heading: "Sign Up",
+    register: "Sign Up!",
   },
   errorScreen: {
     title: "Something went wrong!",
