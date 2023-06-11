@@ -6,7 +6,6 @@ import { AppStackScreenProps } from "app/navigators"
 import { Button, Icon, Text, TextField, TextFieldAccessoryProps } from "app/components"
 import { colors, spacing } from "../theme"
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
-import { useNavigation } from "@react-navigation/native"
 import { useHeader } from "../utils/useHeader"
 import { useStores } from "../models"
 
@@ -113,7 +112,13 @@ export const RegisterScreen: FC<RegisterScreenProps> = observer(function Registe
           />
         </View>
         <View style={$submitButtonContainer}>
-          <Button testID="login-button" tx="signUp.register" style={$tapButton} preset="reversed" onPress={signUp} />
+          <Button
+            testID="login-button"
+            tx="signUp.register"
+            style={$tapButton}
+            preset="reversed"
+            onPress={signUp}
+          />
         </View>
       </View>
     </View>

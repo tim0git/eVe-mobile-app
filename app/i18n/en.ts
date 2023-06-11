@@ -5,6 +5,7 @@ const en = {
     cancel: "Cancel",
     back: "Back",
     logOut: "Log Out",
+    reset: "Reset",
   },
   welcomeScreen: {
     heading: "Welcome",

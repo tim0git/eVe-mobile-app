@@ -16,6 +16,8 @@ export const DemoDebugScreen: FC<DemoTabScreenProps<"DemoDebug">> = function Dem
 ) {
   const {
     authenticationStore: { logout },
+    registrationStore: { resetRegistration },
+    onboardingStore: { resetOnboarding },
   } = useStores()
 
   const usingHermes = typeof HermesInternal === "object" && HermesInternal !== null
@@ -36,6 +38,12 @@ export const DemoDebugScreen: FC<DemoTabScreenProps<"DemoDebug">> = function Dem
     },
     [],
   )
+
+  const reset = () => {
+    logout()
+    resetRegistration()
+    resetOnboarding()
+  }
 
   return (
     <Screen preset="scroll" safeAreaEdges={["top"]} contentContainerStyle={$container}>
@@ -93,6 +101,9 @@ export const DemoDebugScreen: FC<DemoTabScreenProps<"DemoDebug">> = function Dem
       </View>
       <View style={$buttonContainer}>
         <Button style={$button} tx="common.logOut" onPress={logout} />
+      </View>
+      <View style={$buttonContainer}>
+        <Button style={$button} tx="common.reset" onPress={reset} />
       </View>
     </Screen>
   )
