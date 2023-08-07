@@ -146,7 +146,7 @@ const $bottomContainer: ViewStyle = {
   borderTopLeftRadius: 16,
   borderTopRightRadius: 16,
   paddingHorizontal: spacing.lg,
-  justifyContent: "space-between",
+  justifyContent: "space-around",
 }
 
 const $inputContainer: ViewStyle = {
@@ -160,7 +160,7 @@ const $submitButtonContainer: ViewStyle = {
 }
 
 const $signUpHeading: TextStyle = {
-  marginBottom: spacing.md,
+  marginBottom: spacing.xs,
 }
 
 const $textField: ViewStyle = {

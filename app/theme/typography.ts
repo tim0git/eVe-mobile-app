@@ -33,6 +33,7 @@ const fonts = {
     light: "HelveticaNeue-Light",
     normal: "Helvetica Neue",
     medium: "HelveticaNeue-Medium",
+    bold: "HelveticaNeue-bold",
   },
   courier: {
     // iOS only font.
@@ -59,7 +60,7 @@ export const typography = {
   /**
    * The primary font. Used in most places.
    */
-  primary: fonts.spaceGrotesk,
+  primary: fonts.helveticaNeue,
   /**
    * An alternate font used for perhaps titles and stuff.
    */

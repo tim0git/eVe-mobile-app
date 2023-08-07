@@ -9,7 +9,9 @@ import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
 import { useHeader } from "../utils/useHeader"
 import { useStores } from "../models"
 interface OnboardingScreenProps extends NativeStackScreenProps<AppStackScreenProps<"Onboarding">> {}
-export const OnboardingScreen: FC<OnboardingScreenProps> = observer(function OnboardingScreen(_props) {
+export const OnboardingScreen: FC<OnboardingScreenProps> = observer(function OnboardingScreen(
+  _props,
+) {
   const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"])
   const { navigation } = _props
   const {
@@ -29,7 +31,12 @@ export const OnboardingScreen: FC<OnboardingScreenProps> = observer(function Onb
   return (
     <View style={$container}>
       <View style={$topContainer}>
-        <Text testID="welcome-heading" style={$welcomeHeading} tx="onboardingScreen.heading" preset="heading" />
+        <Text
+          testID="welcome-heading"
+          style={$welcomeHeading}
+          tx="onboardingScreen.heading"
+          preset="heading"
+        />
       </View>
 
       <View style={[$bottomContainer, $bottomContainerInsets]} />
@@ -62,5 +69,5 @@ const $bottomContainer: ViewStyle = {
 }
 
 const $welcomeHeading: TextStyle = {
-  marginBottom: spacing.md,
+  marginBottom: spacing.xs,
 }
