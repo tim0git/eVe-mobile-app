@@ -47,9 +47,10 @@ try {
 
 const getStories = () => {
   return {
+    "./.storybook/stories/Navigators/AppNavigator.stories.js": require("./stories/Navigators/AppNavigator.stories.js"),
+    "./.storybook/stories/Navigators/HomeNavigator.stories.js": require("./stories/Navigators/HomeNavigator.stories.js"),
     "./.storybook/stories/Screens/DebugScreen.stories.js": require("./stories/Screens/DebugScreen.stories.js"),
     "./.storybook/stories/Screens/ErrorBoundary.stories.js": require("./stories/Screens/ErrorBoundary.stories.js"),
-    "./.storybook/stories/Screens/HomeNavigator.stories.js": require("./stories/Screens/HomeNavigator.stories.js"),
     "./.storybook/stories/Screens/LoginScreen.stories.js": require("./stories/Screens/LoginScreen.stories.js"),
     "./.storybook/stories/Screens/OnboardingScreen.stories.js": require("./stories/Screens/OnboardingScreen.stories.js"),
     "./.storybook/stories/Screens/RegisterScreen.stories.js": require("./stories/Screens/RegisterScreen.stories.js"),
