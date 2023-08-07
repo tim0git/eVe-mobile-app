@@ -29,7 +29,7 @@ export type DemoTabScreenProps<T extends keyof DemoTabParamList> = CompositeScre
 
 const Tab = createBottomTabNavigator<DemoTabParamList>()
 
-export function DemoNavigator() {
+export function HomeNavigator() {
   const { bottom } = useSafeAreaInsets()
 
   return (
@@ -48,7 +48,7 @@ export function DemoNavigator() {
         name="DemoShowroom"
         component={DemoShowroomScreen}
         options={{
-          tabBarLabel: translate("demoNavigator.componentsTab"),
+          tabBarLabel: translate("homeNavigator.componentsTab"),
           tabBarIcon: ({ focused }) => (
             <Icon icon="components" color={focused && colors.tint} size={30} />
           ),
@@ -59,7 +59,7 @@ export function DemoNavigator() {
         name="DemoCommunity"
         component={DemoCommunityScreen}
         options={{
-          tabBarLabel: translate("demoNavigator.communityTab"),
+          tabBarLabel: translate("homeNavigator.communityTab"),
           tabBarIcon: ({ focused }) => (
             <Icon icon="community" color={focused && colors.tint} size={30} />
           ),
@@ -70,8 +70,8 @@ export function DemoNavigator() {
         name="DemoPodcastList"
         component={DemoPodcastListScreen}
         options={{
-          tabBarAccessibilityLabel: translate("demoNavigator.podcastListTab"),
-          tabBarLabel: translate("demoNavigator.podcastListTab"),
+          tabBarAccessibilityLabel: translate("homeNavigator.podcastListTab"),
+          tabBarLabel: translate("homeNavigator.podcastListTab"),
           tabBarIcon: ({ focused }) => (
             <Icon icon="podcast" color={focused && colors.tint} size={30} />
           ),
@@ -82,7 +82,7 @@ export function DemoNavigator() {
         name="Debug"
         component={DebugScreen}
         options={{
-          tabBarLabel: translate("demoNavigator.debugTab"),
+          tabBarLabel: translate("homeNavigator.debugTab"),
           tabBarIcon: ({ focused }) => (
             <Icon icon="debug" color={focused && colors.tint} size={30} />
           ),
