@@ -2,7 +2,7 @@
 import React from "react"
 import { Text } from "../../../components"
 import { colors } from "../../../theme"
-import { Demo } from "../DemoShowroomScreen"
+import { Demo } from "../SearchScreen"
 import { DemoDivider } from "../DemoDivider"
 import { DemoUseCase } from "../DemoUseCase"
 
@@ -93,7 +93,7 @@ export const DemoText: Demo = {
 
       <Text>
         <Text text="via `tx` prop - " />
-        <Text tx="demoShowroomScreen.lorem2Sentences" />
+        <Text tx="searchScreen.lorem2Sentences" />
       </Text>
 
       <DemoDivider />
@@ -142,5 +142,3 @@ export const DemoText: Demo = {
     </DemoUseCase>,
   ],
 }
-
-// @demo remove-file

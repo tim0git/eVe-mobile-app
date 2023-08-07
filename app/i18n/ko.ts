@@ -44,12 +44,12 @@ const ko: Translations = {
     hint: "힌트: 가장 좋아하는 암호와 아무런 아무 이메일 주소나 사용할 수 있어요 :)",
   },
   homeNavigator: {
-    componentsTab: "컴포넌트",
+    searchTab: "컴포넌트",
     debugTab: "디버그",
-    communityTab: "커뮤니티",
-    podcastListTab: "팟캐스트",
+    profileTab: "커뮤니티",
+    favouriteListTab: "팟캐스트",
   },
-  demoCommunityScreen: {
+  profileScreen: {
     title: "커뮤니티와 함께해요",
     tagLine:
       "전문적인 React Native 엔지니어들로 구성된 Infinite Red 커뮤니티에 접속해서 함께 개발 실력을 향상시켜 보세요!",
@@ -72,7 +72,7 @@ const ko: Translations = {
       "프로젝트 전체를 수행하든, 실무 교육을 통해 팀의 개발 속도에 박차를 가하든 상관없이, Infinite Red 는 React Native 프로젝트의 모든 분야의 에서 도움을 드릴 수 있습니다.",
     hireUsLink: "메세지 보내기",
   },
-  demoShowroomScreen: {
+  searchScreen: {
     jumpStart: "프로젝트를 바로 시작할 수 있는 컴포넌트들!",
     lorem2Sentences:
       "별 하나에 추억과, 별 하나에 사랑과, 별 하나에 쓸쓸함과, 별 하나에 동경(憧憬)과, 별 하나에 시와, 별 하나에 어머니, 어머니",
@@ -88,7 +88,7 @@ const ko: Translations = {
     reactotron: "Reactotron 으로 보내기",
     reportBugs: "버그 보고하기",
     demoList: "데모 목록",
-    demoPodcastList: "데모 팟캐스트 목록",
+    favourites: "데모 팟캐스트 목록",
     androidReactotronHint:
       "만약에 동작하지 않는 경우, Reactotron 데스크탑 앱이 실행중인지 확인 후, 터미널에서 adb reverse tcp:9090 tcp:9090 을 실행한 다음 앱을 다시 실행해보세요.",
     iosReactotronHint:
@@ -100,7 +100,7 @@ const ko: Translations = {
     windowsReactotronHint:
       "만약에 동작하지 않는 경우, Reactotron 데스크탑 앱이 실행중인지 확인 후 앱을 다시 실행해보세요.",
   },
-  demoPodcastListScreen: {
+  favouritesScreen: {
     title: "React Native 라디오 에피소드",
     onlyFavorites: "즐겨찾기만 보기",
     favoriteButton: "즐겨찾기",

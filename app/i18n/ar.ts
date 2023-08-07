@@ -28,7 +28,6 @@ const ar: Translations = {
       button: "لنحاول هذا مرّة أخرى",
     },
   },
-  // @demo remove-block-start
   errors: {
     invalidEmail: "عنوان البريد الالكتروني غير صالح",
   },
@@ -44,12 +43,12 @@ const ar: Translations = {
     hint: "(: تلميح: يمكنك استخدام اي عنوان بريد الكتروني وكلمة السر المفضلة لديك",
   },
   homeNavigator: {
-    componentsTab: "عناصر",
+    searchTab: "عناصر",
     debugTab: "تصحيح",
-    communityTab: "واصل اجتماعي",
-    podcastListTab: "البودكاست",
+    profileTab: "واصل اجتماعي",
+    favouriteListTab: "البودكاست",
   },
-  demoCommunityScreen: {
+  profileScreen: {
     title: "تواصل مع المجتمع",
     tagLine:
       "قم بالتوصيل لمنتدى Infinite Red الذي يضم تفاعل المهندسين المحلّيين ورفع مستوى تطوير تطبيقك معنا",
@@ -72,7 +71,7 @@ const ar: Translations = {
       "سواء كان الامر يتعلّق بتشغيل مشروع كامل او اعداد الفرق بسرعة من خلال التدريب العلمي لدينا، يمكن ان يساعد Infinite Red اللامتناهي في اي مشروع محلي يتفاعل معه.",
     hireUsLink: "ارسل لنا رسالة",
   },
-  demoShowroomScreen: {
+  searchScreen: {
     jumpStart: "مكونات او عناصر لبدء مشروعك",
     lorem2Sentences:
       "عامل الناس بأخلاقك لا بأخلاقهم. عامل الناس بأخلاقك لا بأخلاقهم. عامل الناس بأخلاقك لا بأخلاقهم",
@@ -87,7 +86,7 @@ const ar: Translations = {
     reactotron: "Reactotron ارسل إلى",
     reportBugs: "الابلاغ عن اخطاء",
     demoList: "قائمة تجريبية",
-    demoPodcastList: "قائمة البودكاست التجريبي",
+    favourites: "قائمة البودكاست التجريبي",
     androidReactotronHint:
       "اذا لم ينجح ذللك، فتأكد من تشغيل تطبيق الحاسوب الخاص Reactotron، وقم بتشغيل عكس adb tcp:9090 \ntcp:9090 من جهازك الطرفي ، واعد تحميل التطبيق",
     iosReactotronHint:
@@ -97,7 +96,7 @@ const ar: Translations = {
     windowsReactotronHint:
       "اذا لم ينجح ذلك، فتأكد من تشغيل الحاسوب ب Reactotron وأعد تحميل التطبيق",
   },
-  demoPodcastListScreen: {
+  favouritesScreen: {
     title: "حلقات إذاعية React Native",
     onlyFavorites: "المفضلة فقط",
     favoriteButton: "المفضل",

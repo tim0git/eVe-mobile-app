@@ -4,7 +4,7 @@ import { TextStyle, View, ViewStyle } from "react-native"
 import { FlatList } from "react-native-gesture-handler"
 import { Icon, ListItem, Text } from "../../../components"
 import { colors, spacing } from "../../../theme"
-import { Demo } from "../DemoShowroomScreen"
+import { Demo } from "../SearchScreen"
 import { DemoDivider } from "../DemoDivider"
 import { DemoUseCase } from "../DemoUseCase"
 
@@ -131,7 +131,7 @@ export const DemoListItem: Demo = {
       description="There are a few different ways to pass content."
     >
       <ListItem topSeparator text="Via `text` prop - reprehenderit sint" />
-      <ListItem topSeparator tx="demoShowroomScreen.demoViaTxProp" />
+      <ListItem topSeparator tx="searchScreen.demoViaTxProp" />
       <ListItem topSeparator>Children - mostrud mollit</ListItem>
       <ListItem topSeparator bottomSeparator>
         <Text>
@@ -200,5 +200,3 @@ export const DemoListItem: Demo = {
     </DemoUseCase>,
   ],
 }
-
-// @demo remove-file

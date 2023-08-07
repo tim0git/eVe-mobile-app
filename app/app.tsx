@@ -51,12 +51,12 @@ const config = {
     Welcome: "welcome",
     Demo: {
       screens: {
-        DemoShowroom: {
+        Search: {
           path: "showroom/:queryIndex?/:itemIndex?",
         },
         Debug: "debug",
         DemoPodcastList: "podcast",
-        DemoCommunity: "community",
+        Profile: "community",
       },
     },
   },

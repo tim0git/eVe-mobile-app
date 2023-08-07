@@ -3,7 +3,7 @@ import React from "react"
 import { TextStyle, ViewStyle } from "react-native"
 import { Icon, TextField } from "../../../components"
 import { colors, spacing } from "../../../theme"
-import { Demo } from "../DemoShowroomScreen"
+import { Demo } from "../SearchScreen"
 import { DemoDivider } from "../DemoDivider"
 import { DemoUseCase } from "../DemoUseCase"
 
@@ -90,11 +90,11 @@ export const DemoTextField: Demo = {
       <DemoDivider size={24} />
 
       <TextField
-        labelTx="demoShowroomScreen.demoViaSpecifiedTxProp"
+        labelTx="searchScreen.demoViaSpecifiedTxProp"
         labelTxOptions={{ prop: "label" }}
-        helperTx="demoShowroomScreen.demoViaSpecifiedTxProp"
+        helperTx="searchScreen.demoViaSpecifiedTxProp"
         helperTxOptions={{ prop: "helper" }}
-        placeholderTx="demoShowroomScreen.demoViaSpecifiedTxProp"
+        placeholderTx="searchScreen.demoViaSpecifiedTxProp"
         placeholderTxOptions={{ prop: "placeholder" }}
       />
 
@@ -191,5 +191,3 @@ export const DemoTextField: Demo = {
     </DemoUseCase>,
   ],
 }
-
-// @demo remove-file

@@ -16,7 +16,13 @@ const en = {
   onboardingScreen: {
     heading: "Onboarding",
   },
-  signUp: {
+  homeNavigator: {
+    searchTab: "Search",
+    debugTab: "Debug",
+    profileTab: "Profile",
+    favouriteListTab: "Favourites",
+  },
+  registerScreen: {
     heading: "Sign Up",
     register: "Sign Up!",
   },
@@ -26,17 +32,6 @@ const en = {
       "This is the screen that your users will see in production when an error is thrown. You'll want to customize this message (located in `app/i18n/en.ts`) and probably the layout as well (`app/screens/ErrorScreen`). If you want to remove this entirely, check `app/app.tsx` for the <ErrorBoundary> component.",
     reset: "RESET APP",
     traceTitle: "Error from %{name} stack", // @demo remove-current-line
-  },
-  emptyStateComponent: {
-    generic: {
-      heading: "So empty... so sad",
-      content: "No data found yet. Try clicking the button to refresh or reload the app.",
-      button: "Let's try this again",
-    },
-  },
-  // @demo remove-block-start
-  errors: {
-    invalidEmail: "Invalid email address.",
   },
   loginScreen: {
     signIn: "Sign In",
@@ -48,14 +43,16 @@ const en = {
     tapToSignIn: "Sign in!",
     hint: "Hint: you can use any email address and your favorite password :)",
   },
-  homeNavigator: {
-    componentsTab: "Components",
-    debugTab: "Debug",
-    communityTab: "Community",
-    podcastListTab: "Podcast",
+  searchScreen: {
+    jumpStart: "Search",
+    lorem2Sentences:
+      "Nulla cupidatat deserunt amet quis aliquip nostrud do adipisicing. Adipisicing excepteur elit laborum Lorem adipisicing do duis.",
+    demoHeaderTxExample: "Yay",
+    demoViaTxProp: "Via `tx` Prop",
+    demoViaSpecifiedTxProp: "Via `{{prop}}Tx` Prop",
   },
-  demoCommunityScreen: {
-    title: "Connect with the community",
+  profileScreen: {
+    title: "Profile",
     tagLine:
       "Plug in to Infinite Red's community of React Native engineers and level up your app development with us!",
     joinUsOnSlackTitle: "Join us on Slack",
@@ -77,14 +74,6 @@ const en = {
       "Whether it's running a full project or getting teams up to speed with our hands-on training, Infinite Red can help with just about any React Native project.",
     hireUsLink: "Send us a message",
   },
-  demoShowroomScreen: {
-    jumpStart: "Components to jump start your project!",
-    lorem2Sentences:
-      "Nulla cupidatat deserunt amet quis aliquip nostrud do adipisicing. Adipisicing excepteur elit laborum Lorem adipisicing do duis.",
-    demoHeaderTxExample: "Yay",
-    demoViaTxProp: "Via `tx` Prop",
-    demoViaSpecifiedTxProp: "Via `{{prop}}Tx` Prop",
-  },
   debugScreen: {
     howTo: "HOW TO",
     title: "Debug",
@@ -93,7 +82,7 @@ const en = {
     reactotron: "Send to Reactotron",
     reportBugs: "Report Bugs",
     demoList: "Demo List",
-    demoPodcastList: "Demo Podcast List",
+    favourites: "Demo Podcast List",
     androidReactotronHint:
       "If this doesn't work, ensure the Reactotron desktop app is running, run adb reverse tcp:9090 tcp:9090 from your terminal, and reload the app.",
     iosReactotronHint:
@@ -105,8 +94,8 @@ const en = {
     windowsReactotronHint:
       "If this doesn't work, ensure the Reactotron desktop app is running and reload app.",
   },
-  demoPodcastListScreen: {
-    title: "React Native Radio episodes",
+  favouriteScreen: {
+    title: "Favourites",
     onlyFavorites: "Only Show Favorites",
     favoriteButton: "Favorite",
     unfavoriteButton: "Unfavorite",
@@ -126,7 +115,16 @@ const en = {
         "No favorites have been added yet. Tap the heart on an episode to add it to your favorites!",
     },
   },
-  // @demo remove-block-end
+  errors: {
+    invalidEmail: "Invalid email address.",
+  },
+  emptyStateComponent: {
+    generic: {
+      heading: "So empty... so sad",
+      content: "No data found yet. Try clicking the button to refresh or reload the app.",
+      button: "Let's try this again",
+    },
+  },
 }
 
 export default en

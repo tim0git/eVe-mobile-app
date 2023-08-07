@@ -11,7 +11,7 @@ import { useColorScheme } from "react-native"
 import * as Screens from "app/screens"
 import Config from "../config"
 import { useStores } from "../models"
-import { HomeNavigator, DemoTabParamList } from "./HomeNavigator"
+import { HomeNavigator, HomeTabParamList } from "./HomeNavigator"
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 import { colors } from "app/theme"
 
@@ -20,7 +20,7 @@ export type AppStackParamList = {
   Onboarding: undefined
   Register: undefined
   Login: undefined
-  Demo: NavigatorScreenParams<DemoTabParamList>
+  Demo: NavigatorScreenParams<HomeTabParamList>
 }
 
 const exitRoutes = Config.exitRoutes

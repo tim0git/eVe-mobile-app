@@ -5,16 +5,16 @@ import { TextStyle, ViewStyle } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { Icon } from "../components"
 import { translate } from "../i18n"
-import { DemoCommunityScreen, DemoShowroomScreen, DebugScreen } from "../screens"
-import { DemoPodcastListScreen } from "../screens/DemoPodcastListScreen"
+import { ProfileScreen, SearchScreen, DebugScreen } from "../screens"
+import { FavouritesScreen } from "../screens/FavouritesScreen"
 import { colors, spacing, typography } from "../theme"
 import { AppStackParamList, AppStackScreenProps } from "./AppNavigator"
 
-export type DemoTabParamList = {
-  DemoCommunity: undefined
-  DemoShowroom: { queryIndex?: string; itemIndex?: string }
+export type HomeTabParamList = {
+  Profile: undefined
+  Search: { queryIndex?: string; itemIndex?: string }
   Debug: undefined
-  DemoPodcastList: undefined
+  Favourites: undefined
 }
 
 /**
@@ -22,12 +22,12 @@ export type DemoTabParamList = {
  *
  * More info: https://reactnavigation.org/docs/typescript/#organizing-types
  */
-export type DemoTabScreenProps<T extends keyof DemoTabParamList> = CompositeScreenProps<
-  BottomTabScreenProps<DemoTabParamList, T>,
+export type HomeTabScreenProps<T extends keyof HomeTabParamList> = CompositeScreenProps<
+  BottomTabScreenProps<HomeTabParamList, T>,
   AppStackScreenProps<keyof AppStackParamList>
 >
 
-const Tab = createBottomTabNavigator<DemoTabParamList>()
+const Tab = createBottomTabNavigator<HomeTabParamList>()
 
 export function HomeNavigator() {
   const { bottom } = useSafeAreaInsets()
@@ -45,35 +45,33 @@ export function HomeNavigator() {
       }}
     >
       <Tab.Screen
-        name="DemoShowroom"
-        component={DemoShowroomScreen}
+        name="Search"
+        component={SearchScreen}
         options={{
-          tabBarLabel: translate("homeNavigator.componentsTab"),
+          tabBarLabel: translate("homeNavigator.searchTab"),
+          tabBarIcon: ({ focused }) => <Icon icon="pin" color={focused && colors.tint} size={30} />,
+        }}
+      />
+
+      <Tab.Screen
+        name="Favourites"
+        component={FavouritesScreen}
+        options={{
+          tabBarAccessibilityLabel: translate("homeNavigator.favouriteListTab"),
+          tabBarLabel: translate("homeNavigator.favouriteListTab"),
           tabBarIcon: ({ focused }) => (
-            <Icon icon="components" color={focused && colors.tint} size={30} />
+            <Icon icon="heart" color={focused && colors.tint} size={30} />
           ),
         }}
       />
 
       <Tab.Screen
-        name="DemoCommunity"
-        component={DemoCommunityScreen}
+        name="Profile"
+        component={ProfileScreen}
         options={{
-          tabBarLabel: translate("homeNavigator.communityTab"),
+          tabBarLabel: translate("homeNavigator.profileTab"),
           tabBarIcon: ({ focused }) => (
             <Icon icon="community" color={focused && colors.tint} size={30} />
-          ),
-        }}
-      />
-
-      <Tab.Screen
-        name="DemoPodcastList"
-        component={DemoPodcastListScreen}
-        options={{
-          tabBarAccessibilityLabel: translate("homeNavigator.podcastListTab"),
-          tabBarLabel: translate("homeNavigator.podcastListTab"),
-          tabBarIcon: ({ focused }) => (
-            <Icon icon="podcast" color={focused && colors.tint} size={30} />
           ),
         }}
       />
@@ -107,5 +105,3 @@ const $tabBarLabel: TextStyle = {
   lineHeight: 16,
   flex: 1,
 }
-
-// @demo remove-file

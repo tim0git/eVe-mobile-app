@@ -3,7 +3,7 @@ import React from "react"
 import { EmptyState } from "../../../components"
 import { colors } from "../../../theme"
 import { DemoDivider } from "../DemoDivider"
-import { Demo } from "../DemoShowroomScreen"
+import { Demo } from "../SearchScreen"
 import { DemoUseCase } from "../DemoUseCase"
 
 export const DemoEmptyState: Demo = {
@@ -39,11 +39,11 @@ export const DemoEmptyState: Demo = {
       <DemoDivider size={30} line />
 
       <EmptyState
-        headingTx="demoShowroomScreen.demoViaSpecifiedTxProp"
+        headingTx="searchScreen.demoViaSpecifiedTxProp"
         headingTxOptions={{ prop: "heading" }}
-        contentTx="demoShowroomScreen.demoViaSpecifiedTxProp"
+        contentTx="searchScreen.demoViaSpecifiedTxProp"
         contentTxOptions={{ prop: "content" }}
-        buttonTx="demoShowroomScreen.demoViaSpecifiedTxProp"
+        buttonTx="searchScreen.demoViaSpecifiedTxProp"
         buttonTxOptions={{ prop: "button" }}
       />
     </DemoUseCase>,
@@ -73,5 +73,3 @@ export const DemoEmptyState: Demo = {
     </DemoUseCase>,
   ],
 }
-
-// @demo remove-file

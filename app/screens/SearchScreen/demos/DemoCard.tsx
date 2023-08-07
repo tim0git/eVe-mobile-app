@@ -2,7 +2,7 @@
 import React from "react"
 import { AutoImage, Button, Card, Icon } from "../../../components"
 import { colors, spacing } from "../../../theme"
-import { Demo } from "../DemoShowroomScreen"
+import { Demo } from "../SearchScreen"
 import { DemoDivider } from "../DemoDivider"
 import { DemoUseCase } from "../DemoUseCase"
 
@@ -72,11 +72,11 @@ export const DemoCard: Demo = {
       <DemoDivider />
       <Card
         preset="reversed"
-        headingTx="demoShowroomScreen.demoViaSpecifiedTxProp"
+        headingTx="searchScreen.demoViaSpecifiedTxProp"
         headingTxOptions={{ prop: "heading" }}
-        contentTx="demoShowroomScreen.demoViaSpecifiedTxProp"
+        contentTx="searchScreen.demoViaSpecifiedTxProp"
         contentTxOptions={{ prop: "content" }}
-        footerTx="demoShowroomScreen.demoViaSpecifiedTxProp"
+        footerTx="searchScreen.demoViaSpecifiedTxProp"
         footerTxOptions={{ prop: "footer" }}
       />
     </DemoUseCase>,
@@ -163,5 +163,3 @@ export const DemoCard: Demo = {
     </DemoUseCase>,
   ],
 }
-
-// @demo remove-file

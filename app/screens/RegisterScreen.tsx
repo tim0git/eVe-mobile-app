@@ -76,7 +76,12 @@ export const RegisterScreen: FC<RegisterScreenProps> = observer(function Registe
   return (
     <View style={$container}>
       <View style={$topContainer}>
-        <Text testID="signUp-heading" style={$signUpHeading} tx="signUp.heading" preset="heading" />
+        <Text
+          testID="signUp-heading"
+          style={$signUpHeading}
+          tx="registerScreen.heading"
+          preset="heading"
+        />
       </View>
 
       <View style={[$bottomContainer, $bottomContainerInsets]}>
@@ -114,7 +119,7 @@ export const RegisterScreen: FC<RegisterScreenProps> = observer(function Registe
         <View style={$submitButtonContainer}>
           <Button
             testID="login-button"
-            tx="signUp.register"
+            tx="registerScreen.register"
             style={$tapButton}
             preset="reversed"
             onPress={signUp}

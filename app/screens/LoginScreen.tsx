@@ -143,5 +143,3 @@ const $textField: ViewStyle = {
 const $tapButton: ViewStyle = {
   marginTop: spacing.xs,
 }
-
-// @demo remove-file

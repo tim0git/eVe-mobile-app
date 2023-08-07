@@ -3,7 +3,7 @@ import React from "react"
 import { TextStyle, View, ViewStyle } from "react-native"
 import { Header, Icon } from "../../../components"
 import { colors } from "../../../theme"
-import { Demo } from "../DemoShowroomScreen"
+import { Demo } from "../SearchScreen"
 import { DemoDivider } from "../DemoDivider"
 import { DemoUseCase } from "../DemoUseCase"
 
@@ -50,11 +50,7 @@ export const DemoHeader: Demo = {
       name="Action Text"
       description="You can easily pass in text to the left or right action components."
     >
-      <Header
-        title="Via `leftTx`"
-        leftTx="demoShowroomScreen.demoHeaderTxExample"
-        safeAreaEdges={[]}
-      />
+      <Header title="Via `leftTx`" leftTx="searchScreen.demoHeaderTxExample" safeAreaEdges={[]} />
       <DemoDivider size={24} />
       <Header title="Via `rightText`" rightText="Yay" safeAreaEdges={[]} />
     </DemoUseCase>,
@@ -115,5 +111,3 @@ export const DemoHeader: Demo = {
     </DemoUseCase>,
   ],
 }
-
-// @demo remove-file

@@ -43,5 +43,3 @@ const $rowLayout: ViewStyle = {
   flexDirection: "row",
   flexWrap: "wrap",
 }
-
-// @demo remove-file

@@ -3,7 +3,7 @@ import React from "react"
 import { TextStyle, View, ViewStyle } from "react-native"
 import { Text, Toggle, ToggleProps } from "../../../components"
 import { colors, spacing } from "../../../theme"
-import { Demo } from "../DemoShowroomScreen"
+import { Demo } from "../SearchScreen"
 import { DemoDivider } from "../DemoDivider"
 import { DemoUseCase } from "../DemoUseCase"
 
@@ -142,9 +142,9 @@ export const DemoToggle: Demo = {
       <ControlledToggle
         variant="radio"
         value
-        labelTx="demoShowroomScreen.demoViaSpecifiedTxProp"
+        labelTx="searchScreen.demoViaSpecifiedTxProp"
         labelTxOptions={{ prop: "label" }}
-        helperTx="demoShowroomScreen.demoViaSpecifiedTxProp"
+        helperTx="searchScreen.demoViaSpecifiedTxProp"
         helperTxOptions={{ prop: "helper" }}
       />
       <DemoDivider size={24} />
@@ -383,5 +383,3 @@ export const DemoToggle: Demo = {
     </DemoUseCase>,
   ],
 }
-
-// @demo remove-file

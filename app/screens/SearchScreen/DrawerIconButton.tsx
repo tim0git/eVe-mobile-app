@@ -106,5 +106,3 @@ const $middleBar: ViewStyle = {
 const $bottomBar: ViewStyle = {
   height: barHeight,
 }
-
-// @demo remove-file

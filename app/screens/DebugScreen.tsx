@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import * as Application from "expo-application"
 import { Linking, Platform, TextStyle, View, ViewStyle } from "react-native"
 import { Button, ListItem, Screen, Text } from "../components"
-import { DemoTabScreenProps } from "../navigators/HomeNavigator"
+import { HomeTabScreenProps } from "../navigators/HomeNavigator"
 import { colors, spacing } from "../theme"
 import { isRTL } from "../i18n"
 import { useStores } from "../models"
@@ -11,7 +11,7 @@ function openLinkInBrowser(url: string) {
   Linking.canOpenURL(url).then((canOpen) => canOpen && Linking.openURL(url))
 }
 
-export const DebugScreen: FC<DemoTabScreenProps<"Debug">> = function DebugScreen(_props) {
+export const DebugScreen: FC<HomeTabScreenProps<"Debug">> = function DebugScreen(_props) {
   const {
     authenticationStore: { logout },
     registrationStore: { resetRegistration },
@@ -145,5 +145,3 @@ const $hint: TextStyle = {
   lineHeight: 15,
   paddingBottom: spacing.lg,
 }
-
-// @demo remove-file

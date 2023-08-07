@@ -3,7 +3,7 @@ import React from "react"
 import { ImageStyle, TextStyle, View, ViewStyle } from "react-native"
 import { Button, Icon, Text } from "../../../components"
 import { colors, typography } from "../../../theme"
-import { Demo } from "../DemoShowroomScreen"
+import { Demo } from "../SearchScreen"
 import { DemoDivider } from "../DemoDivider"
 import { DemoUseCase } from "../DemoUseCase"
 
@@ -49,7 +49,7 @@ export const DemoButton: Demo = {
       <Button text="Via `text` Prop - Billum In" />
       <DemoDivider />
 
-      <Button tx="demoShowroomScreen.demoViaTxProp" />
+      <Button tx="searchScreen.demoViaTxProp" />
       <DemoDivider />
 
       <Button>Children - Irure Reprehenderit</Button>
@@ -138,5 +138,3 @@ export const DemoButton: Demo = {
     </DemoUseCase>,
   ],
 }
-
-// @demo remove-file

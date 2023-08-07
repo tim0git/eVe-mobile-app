@@ -56,5 +56,3 @@ const $line: ViewStyle = {
   left: "50%",
   top: "50%",
 }
-
-// @demo remove-file
