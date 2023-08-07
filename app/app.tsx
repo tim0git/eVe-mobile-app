@@ -17,7 +17,7 @@ import { initialWindowMetrics, SafeAreaProvider } from "react-native-safe-area-c
 import * as Linking from "expo-linking"
 import { useInitialRootStore } from "./models"
 import { AppNavigator, useNavigationPersistence } from "./navigators"
-import { ErrorBoundary } from "./screens/ErrorScreen/ErrorBoundary"
+import { ErrorBoundary } from "./screens"
 import * as storage from "./utils/storage"
 import { customFontsToLoad } from "./theme"
 import { setupReactotron } from "./services/reactotron"
@@ -116,10 +116,4 @@ function App(props: AppProps) {
   )
 }
 
-let AppEntryPoint = App
-
-if (storybookEnabled) {
-  AppEntryPoint = require("../.storybook").default
-}
-
-export default AppEntryPoint
+export default App
