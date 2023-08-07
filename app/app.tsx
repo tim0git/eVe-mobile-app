@@ -39,6 +39,7 @@ setupReactotron({
 })
 
 export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
+const storybookEnabled = true
 
 // Web linking configuration
 const prefix = Linking.createURL("/")
@@ -115,4 +116,10 @@ function App(props: AppProps) {
   )
 }
 
-export default App
+let AppEntryPoint = App
+
+if (storybookEnabled) {
+  AppEntryPoint = require("../.storybook").default
+}
+
+export default AppEntryPoint

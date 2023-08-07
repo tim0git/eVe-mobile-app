@@ -44,6 +44,7 @@ if (isExpo) {
          *
          * You can disable it if you're not using pnpm or a monorepo or symlinks.
          */
+        resolverMainFields: ["sbmodern", "react-native", "browser", "main"],
         resolveRequest: MetroSymlinksResolver(),
         assetExts: [...defaultConfig.resolver.assetExts, "bin"],
       },
