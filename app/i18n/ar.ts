@@ -80,7 +80,7 @@ const ar: Translations = {
     demoViaTxProp: "عبر `tx` Prop",
     demoViaSpecifiedTxProp: "Prop `{{prop}}Tx` عبر",
   },
-  demoDebugScreen: {
+  debugScreen: {
     howTo: "كيف",
     title: "التصحيح",
     tagLine: "مبروك، لديك نموذج اصلي متقدم للغاية للتفاعل هنا. الاستفادة من هذه النمذجة",

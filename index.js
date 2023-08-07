@@ -7,7 +7,7 @@ import React from "react"
 import { AppRegistry } from "react-native"
 import RNBootSplash from "react-native-bootsplash"
 
-const storybookEnabled = true
+const storybookEnabled = false
 
 function IgniteApp() {
   return <App hideSplashScreen={RNBootSplash.hide} />

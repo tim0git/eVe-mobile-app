@@ -11,9 +11,7 @@ function openLinkInBrowser(url: string) {
   Linking.canOpenURL(url).then((canOpen) => canOpen && Linking.openURL(url))
 }
 
-export const DemoDebugScreen: FC<DemoTabScreenProps<"DemoDebug">> = function DemoDebugScreen(
-  _props,
-) {
+export const DebugScreen: FC<DemoTabScreenProps<"Debug">> = function DebugScreen(_props) {
   const {
     authenticationStore: { logout },
     registrationStore: { resetRegistration },
@@ -49,10 +47,10 @@ export const DemoDebugScreen: FC<DemoTabScreenProps<"DemoDebug">> = function Dem
     <Screen preset="scroll" safeAreaEdges={["top"]} contentContainerStyle={$container}>
       <Text
         style={$reportBugsLink}
-        tx="demoDebugScreen.reportBugs"
+        tx="debugScreen.reportBugs"
         onPress={() => openLinkInBrowser("https://github.com/infinitered/ignite/issues")}
       />
-      <Text style={$title} preset="heading" tx="demoDebugScreen.title" />
+      <Text style={$title} preset="heading" tx="debugScreen.title" />
       <View style={$itemsContainer}>
         <ListItem
           LeftComponent={
@@ -96,8 +94,8 @@ export const DemoDebugScreen: FC<DemoTabScreenProps<"DemoDebug">> = function Dem
         />
       </View>
       <View style={$buttonContainer}>
-        <Button style={$button} tx="demoDebugScreen.reactotron" onPress={demoReactotron} />
-        <Text style={$hint} tx={`demoDebugScreen.${Platform.OS}ReactotronHint` as const} />
+        <Button style={$button} tx="debugScreen.reactotron" onPress={demoReactotron} />
+        <Text style={$hint} tx={`debugScreen.${Platform.OS}ReactotronHint` as const} />
       </View>
       <View style={$buttonContainer}>
         <Button style={$button} tx="common.logOut" onPress={logout} />

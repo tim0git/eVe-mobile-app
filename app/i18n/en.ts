@@ -85,7 +85,7 @@ const en = {
     demoViaTxProp: "Via `tx` Prop",
     demoViaSpecifiedTxProp: "Via `{{prop}}Tx` Prop",
   },
-  demoDebugScreen: {
+  debugScreen: {
     howTo: "HOW TO",
     title: "Debug",
     tagLine:
