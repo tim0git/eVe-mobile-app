@@ -14,7 +14,7 @@ export type GeneralApiProblem =
    */
   | { kind: "server" }
   /**
-   * We're not allowed because we haven't identified ourself. This is 401.
+   * We're not allowed because we haven't identified ourselves. This is 401.
    */
   | { kind: "unauthorized" }
   /**
@@ -30,7 +30,7 @@ export type GeneralApiProblem =
    */
   | { kind: "rejected" }
   /**
-   * Something truly unexpected happened. Most likely can try again. This is a catch all.
+   * Something truly unexpected happened. Most likely can try again. This is a catch-all.
    */
   | { kind: "unknown"; temporary: true }
   /**
