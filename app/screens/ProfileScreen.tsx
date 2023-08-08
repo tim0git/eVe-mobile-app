@@ -1,16 +1,24 @@
-import React, { FC } from "react"
+import React, { FC, useState } from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle } from "react-native"
 import { ListItem, Screen, Text, Toggle } from "../components"
 import { HomeTabScreenProps } from "../navigators/HomeNavigator"
 import { spacing } from "../theme"
 import { openLinkInBrowser } from "../utils/openLinkInBrowser"
 import { isRTL } from "../i18n"
+import { useStores } from "../models"
 
 const reactNativeRadioLogo = require("../../assets/images/rnr-logo.png")
 
 export const ProfileScreen: FC<HomeTabScreenProps<"Profile">> = function ProfileScreen(_props) {
-  const [locationEnabled, setLocationEnabled] = React.useState(false)
-  const handleLocationToggle = () => setLocationEnabled(!locationEnabled)
+  const {
+    locationStore: { isLocationEnabled, storeLocationEnabled },
+  } = useStores()
+
+  const [locationEnabled, setLocationEnabled] = useState(isLocationEnabled)
+  const handleLocationToggle = () => {
+    storeLocationEnabled(!locationEnabled)
+    setLocationEnabled(!locationEnabled)
+  }
 
   return (
     <Screen preset="scroll" contentContainerStyle={$container} safeAreaEdges={["top"]}>
@@ -20,14 +28,7 @@ export const ProfileScreen: FC<HomeTabScreenProps<"Profile">> = function Profile
       <Text tx="profileScreen.settingsDescription" style={$description} />
       <View style={$settingsToggleContainer}>
         <Text tx="profileScreen.locationToggle" preset="bold" />
-        <Toggle
-          variant="switch"
-          labelTx="profileScreen.locationToggle"
-          label={locationEnabled ? "Enabled" : "Disabled"}
-          labelPosition={"right"}
-          value={locationEnabled}
-          onValueChange={handleLocationToggle}
-        />
+        <Toggle variant="switch" value={locationEnabled} onValueChange={handleLocationToggle} />
       </View>
 
       <Text preset="subheading" tx="profileScreen.legalSubheading" style={$sectionTitle} />
