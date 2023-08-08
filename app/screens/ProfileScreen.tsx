@@ -27,7 +27,7 @@ export const ProfileScreen: FC<HomeTabScreenProps<"Profile">> = function Profile
       <Text preset="subheading" tx="profileScreen.settingsSubheading" style={$sectionTitle} />
       <Text tx="profileScreen.settingsDescription" style={$description} />
       <View style={$settingsToggleContainer}>
-        <Text tx="profileScreen.locationToggle" preset="bold" />
+        <Text tx="profileScreen.locationToggle" />
         <Toggle variant="switch" value={locationEnabled} onValueChange={handleLocationToggle} />
       </View>
 
