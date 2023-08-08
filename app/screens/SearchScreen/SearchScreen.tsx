@@ -8,7 +8,7 @@ import { spacing } from "../../theme"
 
 export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScreen(_props) {
   return (
-    <Screen preset="fixed" contentContainerStyle={$screenContainer}>
+    <Screen preset="fixed" contentContainerStyle={$screenContainer} safeAreaEdges={["top"]}>
       <View style={$mapContainer}>
         <View style={$searchContainer}>
           <TextField />
