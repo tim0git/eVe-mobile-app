@@ -108,7 +108,7 @@ export const DebugScreen: FC<HomeTabScreenProps<"Debug">> = function DebugScreen
 }
 
 const $container: ViewStyle = {
-  paddingTop: spacing.lg + spacing.xl,
+  paddingTop: spacing.sm,
   paddingBottom: spacing.xxl,
   paddingHorizontal: spacing.lg,
 }

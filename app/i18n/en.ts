@@ -44,7 +44,7 @@ const en = {
     hint: "Hint: you can use any email address and your favorite password :)",
   },
   searchScreen: {
-    jumpStart: "Search",
+    title: "Search",
     lorem2Sentences:
       "Nulla cupidatat deserunt amet quis aliquip nostrud do adipisicing. Adipisicing excepteur elit laborum Lorem adipisicing do duis.",
     demoHeaderTxExample: "Yay",

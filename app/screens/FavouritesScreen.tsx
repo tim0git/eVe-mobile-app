@@ -297,7 +297,7 @@ const $screenContentContainer: ViewStyle = {
 
 const $flatListContentContainer: ViewStyle = {
   paddingHorizontal: spacing.lg,
-  paddingTop: spacing.lg + spacing.xl,
+  paddingTop: spacing.sm,
   paddingBottom: spacing.lg,
 }
 
