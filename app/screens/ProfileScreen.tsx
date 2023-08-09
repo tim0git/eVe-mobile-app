@@ -22,8 +22,6 @@ export const ProfileScreen: FC<HomeTabScreenProps<"Profile">> = function Profile
 
   return (
     <Screen preset="scroll" contentContainerStyle={$container} safeAreaEdges={["top"]}>
-      <Text preset="heading" tx="profileScreen.title" style={$title} />
-
       <Text preset="subheading" tx="profileScreen.settingsSubheading" style={$sectionTitle} />
       <Text tx="profileScreen.settingsDescription" style={$description} />
       <View style={$settingsToggleContainer}>

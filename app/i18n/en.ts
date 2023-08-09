@@ -52,7 +52,6 @@ const en = {
     demoViaSpecifiedTxProp: "Via `{{prop}}Tx` Prop",
   },
   profileScreen: {
-    title: "Profile",
     settingsSubheading: "Settings",
     settingsDescription: "Settings description",
     locationToggle: "Location",
