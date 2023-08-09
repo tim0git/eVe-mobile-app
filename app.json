@@ -53,7 +53,13 @@
       }
     },
     "plugins": [
-      "expo-localization"
+      "expo-localization",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow eVe to use your location."
+        }
+      ]
     ]
   }
 }
