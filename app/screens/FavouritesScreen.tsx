@@ -37,7 +37,7 @@ const rnrImage2 = require("../../assets/images/rnr-image-2.png")
 const rnrImage3 = require("../../assets/images/rnr-image-3.png")
 const rnrImages = [rnrImage1, rnrImage2, rnrImage3]
 
-export const FavouritesScreen: FC<HomeTabScreenProps<"DemoPodcastList">> = observer(
+export const FavouritesScreen: FC<HomeTabScreenProps<"Favourites">> = observer(
   function FavouritesScreen(_props) {
     const { episodeStore } = useStores()
 
