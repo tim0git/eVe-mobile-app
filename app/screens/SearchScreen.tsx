@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react"
 import { View, ViewStyle } from "react-native"
-import { TextField, ModalWrapper } from "app/components"
+import { TextField, ModalWrapper, Icon, TextFieldAccessoryProps } from "app/components"
 import { Screen } from "../components"
 import { HomeTabScreenProps } from "../navigators/HomeNavigator"
 import MapView from "react-native-maps"
@@ -10,12 +10,11 @@ import * as Linking from "expo-linking"
 
 export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScreen(_props) {
   const [location, setLocation] = useState(null)
-  const [errorMsg, setErrorMsg] = useState(null)
-  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [permissionDenied, setPermissionDenied] = useState(false)
 
   const handleLinkToSettings = async () => {
     await Linking.openSettings()
-    setErrorMsg(null)
+    setPermissionDenied(null)
   }
 
   useEffect(() => {
@@ -23,25 +22,34 @@ export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScr
       const { status } = await Location.requestForegroundPermissionsAsync()
 
       if (status !== "granted") {
-        setErrorMsg("permissionsDenied")
-        setIsModalVisible(true)
+        setPermissionDenied(true)
         return
       }
 
       const location = await Location.getCurrentPositionAsync({})
       setLocation(location)
     })()
-  }, [isModalVisible])
+  }, [permissionDenied])
 
-  console.log("location", location)
-  console.log("errorMsg", errorMsg)
-  console.log("isModalVisible", isModalVisible)
+  const SearchLeftAccessory = (props: TextFieldAccessoryProps) => {
+    return (
+      <Icon
+        icon={"view"}
+        color={colors.palette.neutral800}
+        containerStyle={props.style}
+        size={20}
+      />
+    )
+  }
 
   return (
     <Screen preset="fixed" contentContainerStyle={$screenContainer} safeAreaEdges={["top"]}>
       <View style={$mapContainer}>
         <View style={$searchContainer}>
-          <TextField placeholderTx={"searchScreen.searchBarHelperText"} />
+          <TextField
+            placeholderTx="searchScreen.searchBarHelperText"
+            LeftAccessory={SearchLeftAccessory}
+          />
         </View>
         <MapView
           style={$map}
@@ -57,7 +65,7 @@ export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScr
           descriptionTx="searchScreen.locationDisabledErrorDescription"
           buttonTx="searchScreen.locationDisabledErrorButton"
           onButtonPress={handleLinkToSettings}
-          visible={isModalVisible}
+          visible={!!permissionDenied}
         />
       </View>
     </Screen>
@@ -82,26 +90,4 @@ const $mapContainer: ViewStyle = {
 
 const $map: ViewStyle = {
   flex: 1,
-}
-
-const $errorContainer: ViewStyle = {
-  position: "absolute",
-  alignItems: "center",
-  justifyContent: "space-around",
-  padding: spacing.sm,
-  bottom: spacing.xl,
-  left: spacing.sm,
-  right: spacing.sm,
-  top: spacing.xl,
-  zIndex: 1,
-  backgroundColor: colors.background,
-}
-
-const $errorButtonsContainer: ViewStyle = {
-  flexDirection: "column-reverse",
-  justifyContent: "space-around",
-}
-
-const $dismissErrorButton: ViewStyle = {
-  paddingHorizontal: spacing.xxl,
 }
