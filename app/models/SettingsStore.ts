@@ -1,7 +1,7 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
 
-export const LocationStoreModel = types
-  .model("LocationStore")
+export const SettingsStoreModel = types
+  .model("SettingsStore")
   .props({
     locationEnabled: false,
   })
@@ -14,10 +14,10 @@ export const LocationStoreModel = types
     storeLocationEnabled(value?: boolean) {
       store.locationEnabled = value
     },
-    resetLocationStore() {
+    resetSettingsStore() {
       store.locationEnabled = false
     },
   }))
 
-export interface LocationStoreStore extends Instance<typeof LocationStoreModel> {}
-export interface LocationStoreStoreSnapshot extends SnapshotOut<typeof LocationStoreModel> {}
+export interface SettingsStoreStore extends Instance<typeof SettingsStoreModel> {}
+export interface SettingsStoreStoreSnapshot extends SnapshotOut<typeof SettingsStoreModel> {}

@@ -16,7 +16,7 @@ export const DebugScreen: FC<HomeTabScreenProps<"Debug">> = function DebugScreen
     authenticationStore: { logout },
     registrationStore: { resetRegistration },
     onboardingStore: { resetOnboarding },
-    locationStore: { resetLocationStore },
+    locationStore: { resetSettingsStore },
   } = useStores()
 
   const usingHermes = typeof HermesInternal === "object" && HermesInternal !== null
@@ -42,7 +42,7 @@ export const DebugScreen: FC<HomeTabScreenProps<"Debug">> = function DebugScreen
     logout()
     resetRegistration()
     resetOnboarding()
-    resetLocationStore()
+    resetSettingsStore()
   }
 
   return (
