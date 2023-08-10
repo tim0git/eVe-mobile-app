@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react"
 import { View, ViewStyle } from "react-native"
-import { TextField, ModalWrapper, Icon, TextFieldAccessoryProps } from "app/components"
+import { TextField, Alert, Icon, TextFieldAccessoryProps } from "app/components"
 import { Screen } from "../components"
 import { HomeTabScreenProps } from "../navigators/HomeNavigator"
 import MapView from "react-native-maps"
@@ -11,11 +11,7 @@ import * as Linking from "expo-linking"
 export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScreen(_props) {
   const [location, setLocation] = useState(null)
   const [permissionDenied, setPermissionDenied] = useState(false)
-
-  const handleLinkToSettings = async () => {
-    await Linking.openSettings()
-    setPermissionDenied(null)
-  }
+  const [searchText, setSearchText] = useState("")
 
   useEffect(() => {
     ;(async () => {
@@ -31,6 +27,10 @@ export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScr
     })()
   }, [permissionDenied])
 
+  const handleLinkToSettings = async () => {
+    await Linking.openSettings()
+    setPermissionDenied(null)
+  }
   const SearchLeftAccessory = (props: TextFieldAccessoryProps) => {
     return (
       <Icon
@@ -47,6 +47,8 @@ export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScr
       <View style={$mapContainer}>
         <View style={$searchContainer}>
           <TextField
+            onChangeText={setSearchText}
+            value={searchText}
             placeholderTx="searchScreen.searchBarHelperText"
             LeftAccessory={SearchLeftAccessory}
           />
@@ -60,7 +62,7 @@ export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScr
             longitudeDelta: 0.005,
           }}
         />
-        <ModalWrapper
+        <Alert
           tx="searchScreen.locationDisabledErrorTitle"
           descriptionTx="searchScreen.locationDisabledErrorDescription"
           buttonTx="searchScreen.locationDisabledErrorButton"
