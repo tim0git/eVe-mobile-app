@@ -4,7 +4,7 @@ import { colors, spacing } from "../theme"
 import { Text, TextProps } from "./Text"
 import { Button } from "./Button"
 
-interface ModalProps extends TouchableOpacityProps {
+interface AlertProps extends TouchableOpacityProps {
   tx?: TextProps["tx"]
   buttonTx?: TextProps["tx"]
   descriptionTx?: TextProps["tx"]
@@ -13,7 +13,7 @@ interface ModalProps extends TouchableOpacityProps {
   visible?: boolean
 }
 
-export function ModalWrapper(props: ModalProps) {
+export function Alert(props: AlertProps) {
   const { tx, buttonTx, descriptionTx, size = "medium", onButtonPress, visible } = props
   const [modalVisible, setModalVisible] = useState(visible)
 
