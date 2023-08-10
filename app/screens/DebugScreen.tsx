@@ -16,7 +16,7 @@ export const DebugScreen: FC<HomeTabScreenProps<"Debug">> = function DebugScreen
     authenticationStore: { logout },
     registrationStore: { resetRegistration },
     onboardingStore: { resetOnboarding },
-    locationStore: { resetSettingsStore },
+    settingsStore: { resetSettingsStore },
   } = useStores()
 
   const usingHermes = typeof HermesInternal === "object" && HermesInternal !== null
@@ -47,11 +47,6 @@ export const DebugScreen: FC<HomeTabScreenProps<"Debug">> = function DebugScreen
 
   return (
     <Screen preset="scroll" safeAreaEdges={["top"]} contentContainerStyle={$container}>
-      <Text
-        style={$reportBugsLink}
-        tx="debugScreen.reportBugs"
-        onPress={() => openLinkInBrowser("https://github.com/infinitered/ignite/issues")}
-      />
       <Text style={$title} preset="heading" tx="debugScreen.title" />
       <View style={$itemsContainer}>
         <ListItem

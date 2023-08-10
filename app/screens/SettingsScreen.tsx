@@ -9,19 +9,39 @@ import { useStores } from "../models"
 
 const reactNativeRadioLogo = require("../../assets/images/rnr-logo.png")
 
-export const ProfileScreen: FC<HomeTabScreenProps<"Profile">> = function ProfileScreen(_props) {
+export const SettingsScreen: FC<HomeTabScreenProps<"Settings">> = function SettingsScreen(_props) {
   const {
-    authenticationStore: { authEmail },
+    settingsStore: { isLocationEnabled, storeLocationEnabled },
   } = useStores()
+
+  const [locationEnabled, setLocationEnabled] = useState(isLocationEnabled)
+  const handleLocationToggle = () => {
+    storeLocationEnabled(!locationEnabled)
+    setLocationEnabled(!locationEnabled)
+  }
 
   return (
     <Screen preset="scroll" contentContainerStyle={$container} safeAreaEdges={["top"]}>
-      <Text preset="heading" tx="profileScreen.settingsSubheading" style={$title} />
-      <Text tx="profileScreen.settingsDescription" style={$description} />
+      <Text preset="heading" tx="settingsScreen.settingsSubheading" style={$title} />
+      <Text tx="settingsScreen.settingsDescription" style={$description} />
       <View style={$settingsToggleContainer}>
-        <Text tx="profileScreen.userName" />
-        <Text text={authEmail} />
+        <Text tx="settingsScreen.locationToggle" />
+        <Toggle variant="switch" value={locationEnabled} onValueChange={handleLocationToggle} />
       </View>
+
+      <Text preset="subheading" tx="settingsScreen.legalSubheading" style={$sectionTitle} />
+      <Text tx="settingsScreen.legalDescription" style={$description} />
+      <ListItem
+        tx="settingsScreen.termsAndConditions"
+        bottomSeparator
+        rightIcon={isRTL ? "caretLeft" : "caretRight"}
+        LeftComponent={
+          <View style={$logoContainer}>
+            <Image source={reactNativeRadioLogo} style={$logo} />
+          </View>
+        }
+        onPress={() => openLinkInBrowser("https://reactnativeradio.com/")}
+      />
     </Screen>
   )
 }

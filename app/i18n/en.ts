@@ -18,9 +18,10 @@ const en = {
   },
   homeNavigator: {
     searchTab: "Search",
-    debugTab: "Debug",
-    profileTab: "Profile",
     favouriteListTab: "Favourites",
+    profileTab: "Profile",
+    settingsTab: "Settings",
+    debugTab: "Debug",
   },
   registerScreen: {
     heading: "Sign Up",
@@ -50,6 +51,11 @@ const en = {
     locationDisabledErrorButton: "Go to Settings",
   },
   profileScreen: {
+    settingsSubheading: "Profile",
+    settingsDescription: "Profile description",
+    userName: "User Name:",
+  },
+  settingsScreen: {
     settingsSubheading: "Settings",
     settingsDescription: "Settings description",
     locationToggle: "Location",

@@ -5,16 +5,22 @@ import { TextStyle, ViewStyle } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { Icon } from "../components"
 import { translate } from "../i18n"
-import { ProfileScreen, SearchScreen, DebugScreen } from "../screens"
-import { FavouritesScreen } from "../screens/FavouritesScreen"
+import {
+  ProfileScreen,
+  SearchScreen,
+  DebugScreen,
+  FavouritesScreen,
+  SettingsScreen,
+} from "../screens"
 import { colors, spacing, typography } from "../theme"
 import { AppStackParamList, AppStackScreenProps } from "./AppNavigator"
 
 export type HomeTabParamList = {
   Profile: undefined
-  Search: { queryIndex?: string; itemIndex?: string }
+  Search: undefined
   Debug: undefined
   Favourites: undefined
+  Settings: undefined
 }
 
 /**
@@ -72,6 +78,17 @@ export function HomeNavigator() {
           tabBarLabel: translate("homeNavigator.profileTab"),
           tabBarIcon: ({ focused }) => (
             <Icon icon="community" color={focused && colors.tint} size={30} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{
+          tabBarLabel: translate("homeNavigator.settingsTab"),
+          tabBarIcon: ({ focused }) => (
+            <Icon icon="settings" color={focused && colors.tint} size={30} />
           ),
         }}
       />
