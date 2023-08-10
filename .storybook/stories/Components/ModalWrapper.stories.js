@@ -14,7 +14,8 @@ const onRequestClose = () => {
 const defaultProps = {
   tx: "Alert",
   buttonTx: "Press Me",
-  actionButtonOnPress: actionButton,
+  descriptionTx: "You need to enable location services to use this feature.",
+  onButtonPress: actionButton,
   onRequestClose: onRequestClose,
   visible: true,
 }
