@@ -7,11 +7,39 @@ import MapView from "react-native-maps"
 import { spacing, colors } from "../theme"
 import * as Location from "expo-location"
 import * as Linking from "expo-linking"
+import { gql, useQuery } from "@apollo/client"
+
+const GET_DOGS = gql`
+  query GetLocations {
+    locations {
+      id
+
+      name
+
+      description
+
+      photo
+    }
+  }
+`
 
 export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScreen(_props) {
   const [location, setLocation] = useState(null)
   const [permissionDenied, setPermissionDenied] = useState(false)
   const [searchText, setSearchText] = useState("")
+  const { loading, error, data } = useQuery(GET_DOGS)
+
+  if (loading) {
+    console.log("loading")
+  }
+
+  if (error) {
+    console.log(`Error! ${error.message}`)
+  }
+
+  if (data) {
+    console.log(data)
+  }
 
   useEffect(() => {
     ;(async () => {
