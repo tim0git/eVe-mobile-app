@@ -34,7 +34,7 @@ export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScr
   const SearchLeftAccessory = (props: TextFieldAccessoryProps) => {
     return (
       <Icon
-        icon={"view"}
+        icon={"search"}
         color={colors.palette.neutral800}
         containerStyle={props.style}
         size={20}
