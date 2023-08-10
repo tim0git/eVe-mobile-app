@@ -47,6 +47,7 @@ if (isExpo) {
         resolverMainFields: ["sbmodern", "react-native", "browser", "main"],
         resolveRequest: MetroSymlinksResolver(),
         assetExts: [...defaultConfig.resolver.assetExts, "bin"],
+        inlineRequires: false,
       },
     })
   })()

@@ -1,21 +1,25 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { TextStyle, TouchableOpacityProps, View, Pressable, Modal, ViewStyle } from "react-native"
 import { colors, spacing } from "../theme"
 import { Text, TextProps } from "./Text"
 import { Button } from "./Button"
 
 interface ModalProps extends TouchableOpacityProps {
-  tx?: TextProps["text"]
-  buttonTx?: TextProps["text"]
-  descriptionTx?: TextProps["text"]
+  tx?: TextProps["tx"]
+  buttonTx?: TextProps["tx"]
+  descriptionTx?: TextProps["tx"]
   size?: "small" | "medium" | "large"
   onButtonPress?: () => void
   visible?: boolean
 }
 
 export function ModalWrapper(props: ModalProps) {
-  const { tx, buttonTx, descriptionTx, size = "medium", onButtonPress, visible = false } = props
+  const { tx, buttonTx, descriptionTx, size = "medium", onButtonPress, visible } = props
   const [modalVisible, setModalVisible] = useState(visible)
+
+  useEffect(() => {
+    setModalVisible(visible)
+  }, [visible])
 
   return (
     <Modal animationType="slide" transparent={true} visible={modalVisible}>
@@ -26,11 +30,11 @@ export function ModalWrapper(props: ModalProps) {
         }}
       >
         <View style={[$modalView, $modalViewSize[`${size}`]]}>
-          <Text style={$modalText} text={tx} preset="bold" size="sm" />
+          <Text style={$modalText} tx={tx} preset="bold" size="sm" />
           {descriptionTx && (
-            <Text text={descriptionTx} preset="formHelper" style={$modalText} size="xxs" />
+            <Text tx={descriptionTx} preset="formHelper" style={$modalText} size="xxs" />
           )}
-          <Button style={$buttonAction} onPress={onButtonPress} text={buttonTx} preset="reversed" />
+          <Button style={$buttonAction} onPress={onButtonPress} tx={buttonTx} preset="reversed" />
         </View>
       </Pressable>
     </Modal>

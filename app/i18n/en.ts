@@ -44,12 +44,10 @@ const en = {
     hint: "Hint: you can use any email address and your favorite password :)",
   },
   searchScreen: {
-    title: "Search",
-    lorem2Sentences:
-      "Nulla cupidatat deserunt amet quis aliquip nostrud do adipisicing. Adipisicing excepteur elit laborum Lorem adipisicing do duis.",
-    demoHeaderTxExample: "Yay",
-    demoViaTxProp: "Via `tx` Prop",
-    demoViaSpecifiedTxProp: "Via `{{prop}}Tx` Prop",
+    searchBarHelperText: "Search",
+    locationDisabledErrorTitle: "Alert",
+    locationDisabledErrorDescription: "You need to enable location services to use this feature.",
+    locationDisabledErrorButton: "Go to Settings",
   },
   profileScreen: {
     settingsSubheading: "Settings",
