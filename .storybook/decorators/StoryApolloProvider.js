@@ -1,16 +1,12 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { MockedProvider } from "@apollo/client/testing"
 
-export default function initializeApollo({ mocks }) {
-  function StorybookProvider({ children }) {
+export default function ApolloDecorator({ mocks }) {
+  return (story) => {
     return (
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Fragment>{children}</Fragment>
+        {story()}
       </MockedProvider>
     )
-  }
-
-  return (story) => {
-    return <StorybookProvider>{story()}</StorybookProvider>
   }
 }
