@@ -1,2 +1,2 @@
-export * from "./StoryNavigator"
-export * from "./StoryApolloProvider"
+export * from "./Navigator"
+export * from "./ApolloProvider"

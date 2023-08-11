@@ -2,7 +2,7 @@ import React from "react"
 import { SearchScreen } from "../../../app/screens"
 import { NavigationDecorator } from "../../decorators"
 import { storiesOf } from "@storybook/react-native"
-import ApolloDecorator from "../../decorators/StoryApolloProvider"
+import ApolloDecorator from "../../decorators/ApolloProvider"
 import { GET_LOCATIONS } from "../../../app/services/graphql/queries/location"
 
 const mocks = [
