@@ -56,6 +56,7 @@ const getStories = () => {
     "./.storybook/stories/Screens/FavouritesScreen.stories.js": require("./stories/Screens/FavouritesScreen.stories.js"),
     "./.storybook/stories/Screens/LoginScreen.stories.js": require("./stories/Screens/LoginScreen.stories.js"),
     "./.storybook/stories/Screens/OnboardingScreen.stories.js": require("./stories/Screens/OnboardingScreen.stories.js"),
+    "./.storybook/stories/Screens/ProfileScreen.stories.js": require("./stories/Screens/ProfileScreen.stories.js"),
     "./.storybook/stories/Screens/RegisterScreen.stories.js": require("./stories/Screens/RegisterScreen.stories.js"),
     "./.storybook/stories/Screens/SearchScreen.stories.js": require("./stories/Screens/SearchScreen.stories.js"),
     "./.storybook/stories/Screens/WelcomeScreen.stories.js": require("./stories/Screens/WelcomeScreen.stories.js"),
