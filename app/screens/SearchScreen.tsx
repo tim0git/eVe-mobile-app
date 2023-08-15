@@ -8,7 +8,7 @@ import { spacing, colors } from "../theme"
 import * as Location from "expo-location"
 import * as Linking from "expo-linking"
 import { useQuery } from "@apollo/client"
-import { GET_LOCATIONS } from "../services/graphql/queries/location"
+import { GET_LOCATIONS } from "../services/graphql"
 
 export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScreen(_props) {
   const [location, setLocation] = useState(null)
