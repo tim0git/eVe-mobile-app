@@ -1,4 +1,4 @@
-#flow: Login
+#flow: Welcome
 #intent:
 # Open up our app and use the default credentials to login
 # and navigate to the demo screen
@@ -9,12 +9,11 @@ appId: com.eve.mobile.app # the app id of the app we want to test
 ---
 - clearState # clears the state of our app (navigation and authentication)
 - launchApp # launches the app
-- assertVisible: "Sign In"
-- tapOn:
-    text: "Tap to sign in!"
-- assertVisible: "Your app, almost ready for launch!"
+- assertVisible: "Welcome"
 - tapOn:
     text: "Let's go!"
-- assertVisible: "Components to jump start your project!"
-
-# @demo remove-file
+    retryTapIfNoChange: true
+- assertVisible: "Onboarding"
+- tapOn:
+    text: "Skip"
+- assertVisible: "Sign Up"

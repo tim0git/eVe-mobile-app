@@ -6,7 +6,7 @@ env:
   FAVORITES_TEXT: "Switch on to only show favorites"
 
 ---
-- runFlow: Login.yaml
+- runFlow: Onboarding.yaml
 - tapOn: "Podcast"
 - assertVisible: "React Native Radio episodes"
 - tapOn:
