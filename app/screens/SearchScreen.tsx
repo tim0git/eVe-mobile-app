@@ -3,7 +3,7 @@ import { View, ViewStyle } from "react-native"
 import { TextField, Alert, Icon, TextFieldAccessoryProps } from "app/components"
 import { Screen } from "../components"
 import { HomeTabScreenProps } from "../navigators/HomeNavigator"
-import MapView from "react-native-maps"
+import MapView, { Marker } from "react-native-maps"
 import { spacing, colors } from "../theme"
 import * as Location from "expo-location"
 import * as Linking from "expo-linking"
@@ -24,10 +24,6 @@ export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScr
     console.log(`Error! ${error.message}`)
   }
 
-  if (data) {
-    console.log(data)
-  }
-
   useEffect(() => {
     ;(async () => {
       const { status } = await Location.requestForegroundPermissionsAsync()
@@ -46,6 +42,7 @@ export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScr
     await Linking.openSettings()
     setPermissionDenied(null)
   }
+
   const SearchLeftAccessory = (props: TextFieldAccessoryProps) => {
     return (
       <Icon
@@ -73,10 +70,25 @@ export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScr
           region={{
             latitude: location?.coords.latitude,
             longitude: location?.coords.longitude,
-            latitudeDelta: 0.003,
-            longitudeDelta: 0.005,
+            latitudeDelta: 0.009,
+            longitudeDelta: 0.015,
           }}
-        />
+        >
+          {data &&
+            data.locations.map((marker) => {
+              return (
+                <Marker
+                  key={marker.id}
+                  coordinate={{
+                    latitude: marker.addressInfo.latitude,
+                    longitude: marker.addressInfo.longitude,
+                  }}
+                  title={marker.addressInfo.title}
+                  description={marker.description}
+                />
+              )
+            })}
+        </MapView>
         <Alert
           tx="searchScreen.locationDisabledErrorTitle"
           descriptionTx="searchScreen.locationDisabledErrorDescription"
