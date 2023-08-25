@@ -37,6 +37,17 @@ const Tab = createBottomTabNavigator<HomeTabParamList>()
 
 export function HomeNavigator() {
   const { bottom } = useSafeAreaInsets()
+  const searchIcon = ({ focused }) => <Icon icon="pin" color={focused && colors.tint} size={30} />
+  const profileIcon = ({ focused }) => (
+    <Icon icon="community" color={focused && colors.tint} size={30} />
+  )
+  const debugIcon = ({ focused }) => <Icon icon="debug" color={focused && colors.tint} size={30} />
+  const favouritesIcon = ({ focused }) => (
+    <Icon icon="heart" color={focused && colors.tint} size={30} />
+  )
+  const settingsIcon = ({ focused }) => (
+    <Icon icon="settings" color={focused && colors.tint} size={30} />
+  )
 
   return (
     <Tab.Navigator
@@ -55,7 +66,7 @@ export function HomeNavigator() {
         component={SearchScreen}
         options={{
           tabBarLabel: translate("homeNavigator.searchTab"),
-          tabBarIcon: ({ focused }) => <Icon icon="pin" color={focused && colors.tint} size={30} />,
+          tabBarIcon: searchIcon,
         }}
       />
 
@@ -65,9 +76,7 @@ export function HomeNavigator() {
         options={{
           tabBarAccessibilityLabel: translate("homeNavigator.favouriteListTab"),
           tabBarLabel: translate("homeNavigator.favouriteListTab"),
-          tabBarIcon: ({ focused }) => (
-            <Icon icon="heart" color={focused && colors.tint} size={30} />
-          ),
+          tabBarIcon: favouritesIcon,
         }}
       />
 
@@ -76,9 +85,7 @@ export function HomeNavigator() {
         component={ProfileScreen}
         options={{
           tabBarLabel: translate("homeNavigator.profileTab"),
-          tabBarIcon: ({ focused }) => (
-            <Icon icon="community" color={focused && colors.tint} size={30} />
-          ),
+          tabBarIcon: profileIcon,
         }}
       />
 
@@ -87,9 +94,7 @@ export function HomeNavigator() {
         component={SettingsScreen}
         options={{
           tabBarLabel: translate("homeNavigator.settingsTab"),
-          tabBarIcon: ({ focused }) => (
-            <Icon icon="settings" color={focused && colors.tint} size={30} />
-          ),
+          tabBarIcon: settingsIcon,
         }}
       />
 
@@ -98,9 +103,7 @@ export function HomeNavigator() {
         component={DebugScreen}
         options={{
           tabBarLabel: translate("homeNavigator.debugTab"),
-          tabBarIcon: ({ focused }) => (
-            <Icon icon="debug" color={focused && colors.tint} size={30} />
-          ),
+          tabBarIcon: debugIcon,
         }}
       />
     </Tab.Navigator>

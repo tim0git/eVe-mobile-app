@@ -74,20 +74,19 @@ export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScr
             longitudeDelta: 0.015,
           }}
         >
-          {data &&
-            data.locations.map((marker) => {
-              return (
-                <Marker
-                  key={marker.id}
-                  coordinate={{
-                    latitude: marker.addressInfo.latitude,
-                    longitude: marker.addressInfo.longitude,
-                  }}
-                  title={marker.addressInfo.title}
-                  description={marker.description}
-                />
-              )
-            })}
+          {data?.locations.map((marker) => {
+            return (
+              <Marker
+                key={marker.id}
+                coordinate={{
+                  latitude: marker.addressInfo.latitude,
+                  longitude: marker.addressInfo.longitude,
+                }}
+                title={marker.addressInfo.title}
+                description={marker.description}
+              />
+            )
+          })}
         </MapView>
         <Alert
           tx="searchScreen.locationDisabledErrorTitle"
