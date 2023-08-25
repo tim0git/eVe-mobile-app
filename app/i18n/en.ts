@@ -6,6 +6,7 @@ const en = {
     back: "Back",
     logOut: "Log Out",
     reset: "Reset",
+    loading: "Loading",
   },
   welcomeScreen: {
     heading: "Welcome",

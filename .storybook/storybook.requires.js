@@ -49,6 +49,7 @@ const getStories = () => {
   return {
     "./.storybook/stories/Components/Alert.stories.js": require("./stories/Components/Alert.stories.js"),
     "./.storybook/stories/Components/Button.stories.js": require("./stories/Components/Button.stories.js"),
+    "./.storybook/stories/Components/Loading.stories.js": require("./stories/Components/Loading.stories.js"),
     "./.storybook/stories/Navigators/AppNavigator.stories.js": require("./stories/Navigators/AppNavigator.stories.js"),
     "./.storybook/stories/Navigators/HomeNavigator.stories.js": require("./stories/Navigators/HomeNavigator.stories.js"),
     "./.storybook/stories/Screens/DebugScreen.stories.js": require("./stories/Screens/DebugScreen.stories.js"),
