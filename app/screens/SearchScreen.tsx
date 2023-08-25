@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react"
 import { View, ViewStyle } from "react-native"
-import { TextField, Alert, Icon, TextFieldAccessoryProps } from "app/components"
+import { TextField, Alert, Icon, TextFieldAccessoryProps, Loading } from "app/components"
 import { Screen } from "../components"
 import { HomeTabScreenProps } from "../navigators/HomeNavigator"
 import MapView, { Marker } from "react-native-maps"
@@ -95,6 +95,7 @@ export const SearchScreen: FC<HomeTabScreenProps<"Search">> = function SearchScr
           onButtonPress={handleLinkToSettings}
           visible={!!permissionDenied}
         />
+        <Loading visible={loading} />
       </View>
     </Screen>
   )
