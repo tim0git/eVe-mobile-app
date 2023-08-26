@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client"
+import { GraphQLError } from "graphql"
 
 export const GET_LOCATIONS = gql`
   query GetLocations {
@@ -16,7 +17,7 @@ export const GET_LOCATIONS = gql`
   }
 `
 
-export const GET_LOCATIONS_MOCK = [
+export const GET_LOCATIONS_MOCK_SUCCESS = [
   {
     request: {
       query: GET_LOCATIONS,
@@ -114,6 +115,54 @@ export const GET_LOCATIONS_MOCK = [
             description: "Eight 120kW chargers",
           },
         ],
+      },
+    },
+  },
+]
+
+export const GET_LOCATIONS_MOCK_NETWORK_ERROR = [
+  {
+    request: {
+      query: GET_LOCATIONS,
+    },
+
+    error: new Error("A Network Error Occurred"),
+  },
+]
+
+export const GET_LOCATIONS_MOCK_GRAPHQL_ERROR = [
+  {
+    request: {
+      query: GET_LOCATIONS,
+    },
+    result: {
+      errors: [new GraphQLError("A GraphQL Error Occurred")],
+    },
+  },
+]
+
+export const GET_LOCATIONS_MOCK_LOADING = [
+  {
+    // Use `delay` parameter to increase loading time
+    delay: 1e21,
+    request: {
+      query: GET_LOCATIONS,
+    },
+    result: {
+      data: {},
+    },
+  },
+]
+
+export const GET_LOCATIONS_MOCK_SUCCESS_NODATA = [
+  {
+    request: {
+      query: GET_LOCATIONS,
+    },
+
+    result: {
+      data: {
+        locations: [],
       },
     },
   },

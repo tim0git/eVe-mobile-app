@@ -3,9 +3,9 @@ import { HomeNavigator } from "../../../app/navigators/HomeNavigator"
 import { NavigationDecorator } from "../../decorators"
 import { storiesOf } from "@storybook/react-native"
 import ApolloDecorator from "../../decorators/ApolloProvider"
-import { GET_LOCATIONS, GET_LOCATIONS_MOCK } from "../../../app/services/graphql/queries/location"
+import { GET_LOCATIONS_MOCK_SUCCESS } from "../../../app/services/graphql"
 
 storiesOf("Navigators/HomeNavigator", module)
   .addDecorator(NavigationDecorator)
-  .addDecorator(ApolloDecorator({ mocks: GET_LOCATIONS_MOCK }))
+  .addDecorator(ApolloDecorator({ mocks: GET_LOCATIONS_MOCK_SUCCESS }))
   .add("Default", () => <HomeNavigator />)
